@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.company.stubs;
+
+service messageBroker{
+  rpc receiveMessage(MessageRequest) returns (APIResponse);
+}
+
+message MessageRequest{
+  string message = 1;
+  string topic = 2;
+  string type = 3;
+}
+
+message Empty{}
+
+message APIResponse{
+  string responseMessage = 1;
+  int32 responseCode = 2;
+}
